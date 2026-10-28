@@ -102,4 +102,25 @@ describe('TicTacToe game', () => {
         
         expect(winner).toBe("O");
     });
+
+    it('should not allow a player to play after the game has been won', () => {
+        game.Play('X', 1, 0);
+        game.Play('O', 0, 0);
+        game.Play('X', 1, 1);
+        game.Play('O', 2, 2);
+        game.Play('X', 1, 2);
+
+        expect(() => game.Play('O', 0, 1)).toThrow("Game over");
+        expect(game.Winner()).toBe("X");
+    });
+
+    it('should tell the player they lost when playing after the game has been won', () => {
+        game.Play('X', 1, 0);
+        game.Play('O', 0, 0);
+        game.Play('X', 1, 1);
+        game.Play('O', 2, 2);
+        game.Play('X', 1, 2);
+
+        expect(() => game.Play('O', 0, 1)).toThrow("Game over - you are loser");
+    });
 });

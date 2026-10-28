@@ -3,6 +3,10 @@ export class Game {
     private _board: Board = new Board();
 
     public Play(symbol: string, x: number, y: number) : void {
+        //if game already won
+        if (this.Winner() != ' ') {
+            throw new Error("Game over - you are loser");
+        }
         //if first move
         if (this._lastSymbol == ' ') {
             //if player is X
