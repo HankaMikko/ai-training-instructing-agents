@@ -1,0 +1,27 @@
+{
+  "name": "smelly-tic-tac-toe-kata",
+  "version": "1.0.0",
+  "description": "Smelly TicTacToe in TypeScript",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint 'src/**/*.ts'",
+    "test": "jest --passWithNoTests",
+    "clean": "rm -rf build"
+  },
+  "dependencies": {
+    "ts-node": "8.7.0",
+    "tslib": "1.7.1"
+  },
+  "devDependencies": {
+    "@types/jest": "25.1.4",
+    "@types/node": "7.10.9",
+    "@typescript-eslint/eslint-plugin": "7.18.0",
+    "@typescript-eslint/parser": "7.18.0",
+    "eslint": "8.57.1",
+    "jest": "29.7.0",
+    "ts-jest": "29.1.0",
+    "typescript": "5.9.3"
+  }
+}
